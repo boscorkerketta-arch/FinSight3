@@ -49,10 +49,9 @@ export async function* streamSaathi(
     return;
   }
 
-  const messageWithContext = buildUserContext(appState) + '
-
-User says: ' + userMessage;
-
+  const messageWithContext = buildUserContext(appState) + 
+    
+    'User says: ' + userMessage;
   const messages = [
     { role: 'system', content: SYSTEM_PROMPT },
     ...history.map(msg => ({
