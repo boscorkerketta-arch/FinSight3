@@ -87,8 +87,7 @@ export async function* streamSaathi(
     buffer += decoder.decode(value, { stream: true });
 
     let newlineIndex: number;
-    while ((newlineIndex = buffer.indexOf('
-')) !== -1) {
+   while ((newlineIndex = buffer.indexOf('\n')) !== -1) {
       const line = buffer.slice(0, newlineIndex).trim();
       buffer = buffer.slice(newlineIndex + 1);
       if (!line.startsWith('data: ')) continue;
